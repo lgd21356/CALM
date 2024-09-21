@@ -247,6 +247,8 @@ def main():
 
     # Create default directories for weights and statistics
     cfg_train['params']['config']['train_dir'] = args.output_path
+    cfg_train['params']['config']['device']=args.rl_device
+
 
     if args.track:
         wandb.init(
