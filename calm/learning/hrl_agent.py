@@ -47,6 +47,7 @@ class HRLAgent(common_agent.CommonAgent):
     def __init__(self, base_name, config):
         with open(os.path.join(os.getcwd(), config['llc_config']), 'r') as f:
             llc_config = yaml.load(f, Loader=yaml.SafeLoader)
+            llc_config['params']['config']['device'] = config['device']
             llc_config_params = llc_config['params']
             self._latent_dim = llc_config_params['config']['latent_dim']
         
